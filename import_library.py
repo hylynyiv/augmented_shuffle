@@ -24,7 +24,7 @@ def get_tracks(token, max_tracks):
 
 def transform_tracks(item):
     track = item['track']
-    return track['name'] + '\t' + track['artists'][0]['name']
+    return track['name'] + '\t' + track['artists'][0]['name'] + '\t' + track['external_ids']['isrc']
 
 def query_spotify(username, output_file):
         scope = 'user-library-read'
