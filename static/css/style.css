@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+body {
+	background-color: #0AECAD;
+}
+
+@media (min-width: 768px)
+.col-sm-12 {
+width: 100%;
+margin: auto;
+max-width: 850px;
+}
+
+.header {
+	display: -ms-Flexbox;
+	-ms-box-orient: horizontal;
+
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+.header h1, .HeaderSecondCol {
+	flex: 1;
+}
+
+.header h1 {
+	font-size: 50px;
+	letter-spacing: -8px;
+}
+
+.HeaderSecondCol {
+	margin-top: 60px;
+}
+
+.btn-default {
+	color: #F3EA18;
+	background-color: #F79BFF;
+	margin-top: 10px;
+}
+
+.list-group-item {
+	padding: 10px 50px;
+	margin-bottom: 10px;
+	background-color: rgba(255, 61, 61, 1);
+	border-radius: 100px;
+	width: 350px;
+	/* box-shadow: 0px 0px 200px rgba(236, 0, 0, 0.8); */
+	border:none;
+}
+
+
+
+
+
