@@ -27,6 +27,9 @@
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-random"></span> Shuffle Play
     </button>
+    <button type="button" class="btn btn-default btn-lg js-btn-pause">
+      <span class="glyphicon glyphicon-pause"></span> Pause
+    </button>
 
     <h3>Playlist</h3>
     <ul class="list-group">
@@ -107,6 +110,12 @@
           $('.js-current').text(infoTrack);
         });
       }
+
+      $('.js-btn-pause').on('click', function(e) {
+        console.debug('Track Paused');
+        R.player.pause();
+        e.preventDefault();
+      });
 
       R.ready(function() {
         console.debug("STATUS[playing], YAY!")
