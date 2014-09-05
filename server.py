@@ -1,7 +1,7 @@
 from flask import Flask, url_for, redirect, request
 import sys
 import os
-import json
+from json import JSONEncoder
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,6 +12,12 @@ def root():
 def playlist(username):
     fake_data= open('fake.json')
     return json.dumps(json.loads(fake_data.read()))
+
+@app.route('/credentials/<username>', methods=['GET'])
+def credentials(username):
+    client_id = os.environ.get('CLIENT_ID')
+    client_secret = os.environ.get('CLIENT_SECRET')
+    return JSONEncoder().encode({ "client_id": client_id, "client_secret": client_secret})
 
 @app.route('/<path:path>')
 def static_proxy(path):
