@@ -3,7 +3,8 @@
       {
          "relation":"seed",
          "trackname":"track1",
-         "artistname":"artist1"
+         "artistname":"artist1",
+         "track_id":"5JunxkcjfCYcY7xJ29tLai"
       },
       {
          "relation":"same_album",
