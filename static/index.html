@@ -9,6 +9,11 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- JS -->
+    <script src="https://www.rdio.com/api/api.js?client_id=bWZy7AjaQn0X4CHCjl8hXA"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
   </head>
   <body>
 
@@ -16,8 +21,8 @@
     <h1 >Augmented Shuffle</h1>
 
     <h3>Currently Playing</h3>
-    <p><span class="glyphicon glyphicon-play"></span> Current Song Title, Current Artist</p>
-    <p id="message"></p>
+    <p><span class="glyphicon glyphicon-play"></span> <span class="js-current">…</span></p>
+
     <h3>Controls</h3>
     <button type="button" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-random"></span> Shuffle Play
@@ -88,10 +93,29 @@
     </ul>
    </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/pagescripts.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+      var updateCurrentTrack = function() {
+
+        R.player.on("change:playingTrack", function(track) {
+          var infoTrack = [
+            'Title: ', track.get("name"),
+            ' Album: ', track.get("album"),
+            ' Artist: ', track.get("artist")
+          ].join('');
+
+          $('.js-current').text(infoTrack);
+        });
+      }
+
+      R.ready(function() {
+        console.debug("STATUS[playing], YAY!")
+        R.player.play({source: "a3032151"}); // Alice In Chains - The Devil Put Dinosaurs Here
+
+        updateCurrentTrack();
+      });
+
+    </script>
+
   </body>
 </html>
