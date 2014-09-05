@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $("message").text("loaded")
-}
+  $("#message").text("loaded")
+})
