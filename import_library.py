@@ -1,6 +1,11 @@
 #!/usr/bin/python
 import spotipy, os
 import spotipy.util as util
+import codecs
+import sys
+
+UTF8Writer = codecs.getwriter('utf8')
+sys.stdout = UTF8Writer(sys.stdout)
 
 ID = os.environ.get("CLIENT_ID",'')
 SECRET = os.environ.get("CLIENT_SECRET",'')
