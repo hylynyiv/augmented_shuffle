@@ -1,6 +1,7 @@
 from flask import Flask, url_for, redirect, request
 import sys
 import os
+import json
 app = Flask(__name__)
 
 @app.route('/')
@@ -9,7 +10,8 @@ def root():
 
 @app.route('/playlist/<username>', methods=['GET'])
 def playlist(username):
-    return "Playlist for user %s" % username
+    fake_data= open('fake.json')
+    return json.dumps(json.loads(fake_data.read()))
 
 @app.route('/<path:path>')
 def static_proxy(path):
