@@ -8,7 +8,10 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
     <!-- JS -->
     <script src="https://www.rdio.com/api/api.js?client_id=bWZy7AjaQn0X4CHCjl8hXA"></script>
     <script src="js/jquery.min.js"></script>
@@ -18,9 +21,13 @@
   <body>
 
   <div class="col-sm-12">
-    <h1 >Augmented Shuffle</h1>
-
-    <h3>Currently Playing</h3>
+    <div class="header">
+      <h1 >Augmented Shuffle</h1>
+      <div class="HeaderSecondCol">
+          <h3>Currently Playing</h3>
+          <p><span class="glyphicon glyphicon-play"></span> <span class="js-current">…</span></p>
+       </div>
+    </div>
     <p><span class="glyphicon glyphicon-play"></span> <span class="js-current">…</span></p>
 
     <h3>Controls</h3>
